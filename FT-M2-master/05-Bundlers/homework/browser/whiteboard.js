@@ -1,7 +1,7 @@
-(function () {
-  window.whiteboard = new window.EventEmitter();
+ const EventEmitter = require("./event-emitter"); 
+ 
+ const whiteboard = new EventEmitter(); 
 
-  // Ultimately, the color of our stroke;
   var color;
 
   // The color selection elements on the DOM.
@@ -54,7 +54,9 @@
     // ratio to ensure that 1 canvas unit = 1 css pixel, even though our
     // backing store is larger.
     ctx.scale(pixelRatio, pixelRatio);
+ard = new window.EventEmitter();
 
+  // Ulti
     ctx.lineWidth = 5;
     ctx.lineJoin = "round";
     ctx.lineCap = "round";
@@ -106,4 +108,5 @@
       whiteboard.emit("draw", start, end, strokeColor);
     }
   };
-})();
+
+module.exports = whiteboard; 
